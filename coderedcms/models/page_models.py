@@ -357,9 +357,8 @@ class CoderedPage(WagtailCacheMixin, Page, metaclass=CoderedPageMeta):
     ###############
 
     search_fields = [
-        index.SearchField('title', partial_match=True, boost=4),
-        index.SearchField('seo_title', partial_match=True, boost=4),
-        index.SearchField('body', partial_match=True, boost=3),
+        index.SearchField('title', partial_match=True, boost=3),
+        index.SearchField('seo_title', partial_match=True, boost=3),
         index.SearchField('search_description', boost=2),
         index.FilterField('title'),
         index.FilterField('id'),
@@ -746,6 +745,8 @@ class CoderedArticlePage(CoderedWebPage):
             index.FilterField('date_display'),
         ]
     )
+    search_db_include = True
+    search_db_boost = 4
 
     content_panels = CoderedWebPage.content_panels + [
         FieldPanel('caption'),
@@ -1908,3 +1909,4 @@ class CoderedLocationIndexPage(CoderedWebPage):
             Site.objects.get(is_default_site=True)
         ).google_maps_api_key
         return context
+
