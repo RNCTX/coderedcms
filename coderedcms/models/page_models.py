@@ -636,6 +636,8 @@ class CoderedWebPage(CoderedPage):
         CoderedPage.search_fields +
         [index.SearchField('body')]
     )
+    search_db_include = True
+    search_db_boost = 4
 
     # Panels
     body_content_panels = [
@@ -1909,4 +1911,4 @@ class CoderedLocationIndexPage(CoderedWebPage):
             Site.objects.get(is_default_site=True)
         ).google_maps_api_key
         return context
-
+    
