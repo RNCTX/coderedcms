@@ -636,8 +636,6 @@ class CoderedWebPage(CoderedPage):
         CoderedPage.search_fields +
         [index.SearchField('body')]
     )
-    search_db_include = True
-    search_db_boost = 4
 
     # Panels
     body_content_panels = [
@@ -747,9 +745,7 @@ class CoderedArticlePage(CoderedWebPage):
             index.FilterField('date_display'),
         ]
     )
-    search_db_include = True
-    search_db_boost = 4
-
+    
     content_panels = CoderedWebPage.content_panels + [
         FieldPanel('caption'),
         MultiFieldPanel(
@@ -761,7 +757,6 @@ class CoderedArticlePage(CoderedWebPage):
             _('Publication Info')
         )
     ]
-
 
 class CoderedArticleIndexPage(CoderedWebPage):
     """
