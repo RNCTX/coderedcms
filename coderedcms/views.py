@@ -36,7 +36,7 @@ def search(request):
 
     if search_form.is_valid():
         search_query = search_form.cleaned_data['s']
-        search_model = search_form.cleaned_data['t=articlesearch']
+        search_model = search_form.cleaned_data['t']
 
         # get all codered models
         pagemodels = sorted(get_page_models(), key=lambda k: k.search_name)
