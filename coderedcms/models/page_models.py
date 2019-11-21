@@ -357,8 +357,9 @@ class CoderedPage(WagtailCacheMixin, Page, metaclass=CoderedPageMeta):
     ###############
 
     search_fields = [
-        index.SearchField('title', partial_match=True, boost=3),
-        index.SearchField('seo_title', partial_match=True, boost=3),
+        index.SearchField('title', partial_match=True, boost=4),
+        index.SearchField('seo_title', partial_match=True, boost=4),
+        index.SearchField('body', partial_match=True, boost=3),
         index.SearchField('search_description', boost=2),
         index.FilterField('title'),
         index.FilterField('id'),
