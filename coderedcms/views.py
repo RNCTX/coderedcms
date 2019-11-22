@@ -52,13 +52,11 @@ def search(request):
         # search specified page types in the desired order and chain the results together.
         # This provides better search results than simply searching limited fields on CoderedPage.
         db_models = []
-        if backend.__class__ == db.SearchBackend:
             for model in get_page_models():
                 if model.search_db_include:
                     db_models.append(model)
             db_models = sorted(db_models, reverse=True, key=lambda k: k.search_db_boost)
 
-        if backend.__class__ == db.SearchBackend and db_models:
             for model in db_models:
                 # if search_model is provided, only search on that model
                 if not search_model or search_model == ContentType.objects.get_for_model(model).model:  # noqa
