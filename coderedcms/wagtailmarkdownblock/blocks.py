@@ -36,10 +36,10 @@ class MarkdownBlock(TextBlock):
     def media(self):
         return Media(
             js=[
-                "plugins/simplemde/simplemde.min.js",
-                "plugins/simplemde/simplemde.attach.js",
+                "coderedcms/plugins/simplemde/simplemde.min.js",
+                "coderedcms/plugins/simplemde/simplemde.attach.js",
             ],
-            css={"all": ("plugins/simplemde/simplemde.min.css",)},
+            css={"all": ("coderedcms/plugins/simplemde/simplemde.min.css",)},
         )
 
     def render_basic(self, value, context=None):
