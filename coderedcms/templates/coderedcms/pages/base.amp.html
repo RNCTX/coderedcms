@@ -6,12 +6,13 @@
     <meta charset="utf-8">
     <title>{% block title %}{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }} - {{self.get_site.site_name}}{% endif %}{% endblock %}{% block title_suffix %}{% endblock %}</title>
     <link rel="canonical" href="{% block canonical %}{{self.get_full_url}}{% endblock %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=News+Cycle">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <style amp-custom>
         {% block amp_css %}
         /* Some really basic Bootstrap styles */
         body {
-            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-family: "News Cycle","Arial Narrow Bold",sans-serif;
             margin: 0 auto;
         }
         hr {
