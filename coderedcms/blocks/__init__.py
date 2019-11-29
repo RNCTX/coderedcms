@@ -68,6 +68,7 @@ from .base_blocks import (  # noqa
     CollectionChooserBlock,
     MultiSelectBlock
 )
+from coderedcms.wagtailmarkdownblock.blocks import MarkdownBlock
 
 # Collections of blocks commonly used together.
 
@@ -87,6 +88,7 @@ HTML_STREAMBLOCKS = [
 ]
 
 CONTENT_STREAMBLOCKS = HTML_STREAMBLOCKS + [
+    ('code', MarkdownBlock(label='Markdown')),
     ('card', CardBlock()),
     ('carousel', CarouselBlock()),
     ('image_gallery', ImageGalleryBlock()),
